@@ -1,0 +1,11 @@
+node_modules
+.env
+.env.local
+frontend/dist
+backend/.env
+backend/data/
+client/dist
+server/.env
+server/data/
+.DS_Store
+npm-debug.log*

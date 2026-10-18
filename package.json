@@ -1,0 +1,17 @@
+{
+  "name": "careerforge-ai",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "npm --prefix backend run start",
+    "frontend": "npm --prefix frontend run dev -- --host 0.0.0.0",
+    "server": "npm run backend",
+    "client": "npm run frontend",
+    "build": "npm --prefix frontend run build",
+    "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

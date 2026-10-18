@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: careerforge-backend
+    env: node
+    plan: free
+    rootDir: ./backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLIENT_URL
+        value: https://your-vercel-frontend-url.com
+      - key: AI_API_KEY
+        sync: false

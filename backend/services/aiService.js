@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { scoreATS, extractSkillsFromText, extractKeywords } from '../utils/atsEngine.js';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const cleanArray = (items) => {
   const list = Array.isArray(items)
@@ -35,36 +36,21 @@ const parseJsonText = (content) => {
 };
 
 const callOpenAI = async (systemPrompt, userPrompt) => {
-  const apiKey = process.env.AI_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey || apiKey.trim() === '' || apiKey.includes('replace_with')) {
     return null; // Signals fallback to deterministic AI engine
   }
 
   try {
-    const response = await axios.post(
-      'https://api.openai.com/v1/chat/completions',
-      {
-        model: 'gpt-4o-mini',
-        temperature: 0.3,
-        response_format: { type: 'json_object' },
-        messages: [
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: userPrompt },
-        ],
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${apiKey.trim()}`,
-          'Content-Type': 'application/json',
-        },
-        timeout: 15000,
-      }
-    );
-
-    const content = response?.data?.choices?.[0]?.message?.content;
-    return parseJsonText(content);
+    const genAI = new GoogleGenerativeAI(apiKey.trim());
+    const modelName = process.env.GEMINI_MODEL || 'gemini-1.0-pro';
+    const model = genAI.getGenerativeModel({ model: modelName });
+    const combinedPrompt = `${systemPrompt}\n${userPrompt}`;
+    const result = await model.generateContent(combinedPrompt);
+    const text = result?.response?.text?.() ?? '';
+    return parseJsonText(text);
   } catch (error) {
-    console.warn('External AI API request failed or timed out. Falling back to intelligent local AI engine:', error.message);
+    console.warn('Gemini API request failed. Falling back to deterministic local AI engine:', error.message);
     return null;
   }
 };

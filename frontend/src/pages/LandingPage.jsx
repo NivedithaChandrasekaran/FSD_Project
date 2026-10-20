@@ -68,6 +68,7 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
+        </div>
         </section>
 
         {/* Features Section – core four */}
@@ -85,13 +86,16 @@ const LandingPage = () => {
               </div>
             ))}
           </div>
+        </div>
         </section>
 
         {/* Final Call‑to‑Action */}
-        <section className="cta-panel container">
+        <section className="cta-section">
+          <div className="cta-container">
           <h2>Ready to Build a Career That Gets Noticed?</h2>
           <p>Create your career profile today.</p>
           <Link to="/register" className="primary-button cta-large">Get Started</Link>
+        </div>
         </section>
       </main>
 

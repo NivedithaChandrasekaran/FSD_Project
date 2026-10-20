@@ -578,7 +578,18 @@ textarea { resize: vertical; line-height: 1.6; }
 .feature-icon { font-size: 1.8rem; margin-bottom: 8px; }
 
 /* CTA Panel */
-.cta-panel { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 32px; text-align: center; margin: 40px 0; }
+.cta-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 0; /* vertical padding only, horizontal handled by container */
+  margin: 40px auto;
+  max-width: 1400px;
+  width: calc(100% - 48px);
+  text-align: center;
+  box-sizing: border-box;
+}
+
 .cta-panel h2 { font-size: 1.8rem; margin-bottom: 12px; color: var(--secondary); }
 
 /* Footer */

@@ -68,7 +68,6 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
-        </div>
         </section>
 
         {/* Features Section – core four */}
@@ -86,16 +85,15 @@ const LandingPage = () => {
               </div>
             ))}
           </div>
-        </div>
         </section>
 
         {/* Final Call‑to‑Action */}
         <section className="cta-section">
           <div className="cta-container">
-          <h2>Ready to Build a Career That Gets Noticed?</h2>
-          <p>Create your career profile today.</p>
-          <Link to="/register" className="primary-button cta-large">Get Started</Link>
-        </div>
+            <h2>Ready to Build a Career That Gets Noticed?</h2>
+            <p>Create your career profile today.</p>
+            <Link to="/register" className="primary-button cta-large">Get Started</Link>
+          </div>
         </section>
       </main>
 
@@ -115,7 +113,7 @@ const LandingPage = () => {
               <Link to="/resume-builder">Resume Builder</Link>
               <Link to="/ats-analyzer">ATS Analyzer</Link>
               <Link to="/cover-letter">Cover Letter</Link>
-              <Link to="/portfolio">Portfolio</Link>
+
             </div>
             <div>
               <strong>Career AI</strong>

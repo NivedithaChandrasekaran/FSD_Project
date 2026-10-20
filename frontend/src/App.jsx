@@ -11,9 +11,9 @@ import ATSPage from './pages/ATSPage.jsx';
 import CoverLetterPage from './pages/CoverLetterPage.jsx';
 import CareerAdvisorPage from './pages/CareerAdvisorPage.jsx';
 import SavedDocumentsPage from './pages/SavedDocumentsPage.jsx';
-import PortfolioPage from './pages/PortfolioPage.jsx';
+
 import SkillGapPage from './pages/SkillGapPage.jsx';
-import PublicPortfolioPage from './pages/PublicPortfolioPage.jsx';
+
 
 const App = () => {
   return (
@@ -22,8 +22,8 @@ const App = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       
-      {/* Public Portfolio Route */}
-      <Route path="/portfolio/:username" element={<PublicPortfolioPage />} />
+
+
 
       {/* Protected App Routes */}
       <Route
@@ -40,7 +40,6 @@ const App = () => {
         <Route path="/cover-letter" element={<CoverLetterPage />} />
         <Route path="/career-ai" element={<CareerAdvisorPage />} />
         <Route path="/skill-gap" element={<SkillGapPage />} />
-        <Route path="/portfolio" element={<PortfolioPage />} />
         <Route path="/saved-documents" element={<SavedDocumentsPage />} />
       </Route>
 

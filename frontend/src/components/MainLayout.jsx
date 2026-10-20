@@ -10,7 +10,7 @@ const navigation = [
   { label: 'Cover Letter', path: '/cover-letter', icon: '✉️' },
   { label: 'Career AI', path: '/career-ai', icon: '💡' },
   { label: 'Skill Gap', path: '/skill-gap', icon: '🔍' },
-  { label: 'Portfolio', path: '/portfolio', icon: '🌐' },
+
   { label: 'Saved Documents', path: '/saved-documents', icon: '📁' },
 ];
 

@@ -653,3 +653,12 @@ textarea { resize: vertical; line-height: 1.6; }
   color: var(--primary);
   font-weight: 600;
 }
+
+/* Autofill fix for input fields */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #FFFFFF;
+  box-shadow: 0 0 0 1000px #0F172A inset;
+  border-color: #8B5CF6;
+}
